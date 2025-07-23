@@ -1,4 +1,4 @@
-import React, { createContext, useMemo, useContext } from "react";
+import { createContext, useContext, useMemo } from "react";
 import { io } from "socket.io-client";
 
 const SocketContext = createContext(null);
@@ -9,7 +9,7 @@ export const useSocket = () => {
 
 export const SocketProvider = (props) => {
   const socket = useMemo(() => {
-    return io("http://localhost:8000");
+    return io("https://mrvideocallbackend.onrender.com");
   }, []); // ✅ Add this empty dependency array
 
   return (
